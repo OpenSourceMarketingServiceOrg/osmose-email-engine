@@ -2,25 +2,15 @@
   "name": "osmose-email-engine",
   "version": "0.0.0",
   "description": "A SES email engine",
-  "main": "src/index.js",
+  "main": "server.js",
   "scripts": {
-    "start": "nodemon src/index.js"
+    "test": "./node_modules/.bin/mocha",
+    "start": "./node_modules/.bin/nodemon -w ./ --harmony_destructuring",
+    "db:tables:create": "node ./tasks/createTables.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/OpenSourceMarketingServiceOrg/osmose-email-engine.git"
-  },
-  "author": "OpenSourceMarketingService <OpenSourceMarketingService@gmail.com>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/OpenSourceMarketingServiceOrg/osmose-email-engine/issues"
-  },
-  "homepage": "https://github.com/OpenSourceMarketingServiceOrg/osmose-email-engine#readme",
-  "dependencies": {
-    "aws-sdk": "^2.122.0",
-    "body-parser": "^1.18.2",
-    "express": "^4.15.4",
-    "jquery": "^3.2.1"
   },
   "keywords": [
     "osmose",
@@ -30,7 +20,26 @@
     "email",
     "marketing"
   ],
+  "author": "OpenSourceMarketingService <OpenSourceMarketingService@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OpenSourceMarketingServiceOrg/osmose-email-engine/issues"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.122.0",
+    "body-parser": "^1.9.0",
+    "compression": "^1.5.2",
+    "express": "~4.9.0",
+    "express-session": "^1.11.3",
+    "jade": "~1.6.0",
+    "jquery": "^3.2.1",
+    "sequelize": "^3.9.0"
+  },
+  "homepage": "https://github.com/OpenSourceMarketingServiceOrg/osmose-email-engine#readme",
   "devDependencies": {
-    "nodemon": "^1.12.1"
+    "mocha": "^2.3.3",
+    "node-fetch": "^1.0.6",
+    "nodemon": "^1.7.0",
+    "superagent": "^1.4.0"
   }
 }
