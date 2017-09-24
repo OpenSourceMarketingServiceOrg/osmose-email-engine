@@ -4,7 +4,7 @@ module.exports = [
     handler: rootRequire('app/routes/IndexRoute'),
   },
   {
-    path: '/books',
-    handler: rootRequire('app/routes/BooksRoute'),
+    path: '/send',
+    handler: rootRequire('app/routes/SendRoute'),
   },
 ];

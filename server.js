@@ -1,4 +1,7 @@
 'use strict';
+
+console.log("Starting up OSMoSE Email Engine");
+
 require('./utils/rootRequire')();
 require('./utils/prodEnv')();
 let express = require('express');
@@ -7,10 +10,14 @@ let Router  = rootRequire('app/Router');
 let app     = express();
 let server  = http.createServer(app);
 
+console.log("Initialized");
+
 /**
 * MIDDLEWARE
 ********************* */
 require('./config/middleware')(app, express);
+
+console.log("middleware loaded");
 
 /**
 * ROUTES
