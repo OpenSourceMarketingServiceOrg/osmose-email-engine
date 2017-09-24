@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <title>Simple login</title>
+    <script src="./node_modules/jquery/dist/jquery.js"></script>
+    <script>
+      $(document).ready(function(){
+        var user,pass;
+        $("#submit").click(function(){
+          user=$("#user").val();
+          pass=$("#password").val();
+          $.post("http://localhost:3001/sendEmail",{
+            bccList:["mahgdd@gmail.com"],
+            ccList:["mahgdd@gmail.com"],
+            toList: ["mahgdd@gmail.com"],
+            subject: "Yay This Was Sent From Node",
+            body: "<html><body><h1>Woo!</h1><p><strong>With HTML!</strong></p></body></html>"
+          }, function(data){
+            if(data==='success')
+              {
+                alert("login success");
+              }
+          });
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h1>Hello people !</h1>
+    <input type="TEXT" id="user" size="40"><br>
+    <input type="password" id="password" size="40"><br>
+    <input type="button" id="submit" value="Submit">
+  </body>
+</html>
