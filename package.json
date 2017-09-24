@@ -4,7 +4,7 @@
   "description": "A SES email engine",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -16,9 +16,6 @@
     "url": "https://github.com/OpenSourceMarketingServiceOrg/osmose-email-engine/issues"
   },
   "homepage": "https://github.com/OpenSourceMarketingServiceOrg/osmose-email-engine#readme",
-  "scripts": {
-    "start": "node index.js"
-  },
   "dependencies": {
     "aws-sdk": "^2.122.0",
     "express": "^4.15.4"
@@ -30,5 +27,8 @@
     "express",
     "email",
     "marketing"
-  ]
+  ],
+  "devDependencies": {
+    "nodemon": "^1.12.1"
+  }
 }
