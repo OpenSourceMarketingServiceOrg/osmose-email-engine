@@ -1,37 +1,60 @@
 "use strict";
 
-const TodoDAO = require("../dao/todo-dao");
+const AWS = require('aws-sdk');
+const ses = new AWS.SES({
+  apiVersion: '2010-12-01',
+  region: 'us-east-1'
+});
 
 module.exports = class TodoController {
   static getAll(req, res) {
-      TodoDAO
-        .getAll()
-        .then(todos => res.status(200).json(todos))
-        .catch(error => res.status(400).json(error));
+
   }
 
   static getById(req, res) {
-      TodoDAO
-        .getById(req.params.id)
-        .then(todo => res.status(200).json(todo))
-        .catch(error => res.status(400).json(error));
+
   }
 
   static createTodo(req, res) {
-      let _todo = req.body;
 
-      TodoDAO
-        .createTodo(_todo)
-        .then(todo => res.status(201).json(todo))
-        .catch(error => res.status(400).json(error));
+    console.log("createTodo: ", req.body);
+
+    var params = {
+      Destination: {
+        ToAddresses: [
+          'danjenator@gmail.com',
+          /* more items */
+        ]
+      },
+      Message: { /* required */
+        Body: { /* required */
+          Html: {
+            Data: '<html><body><h1>Testes!</h1><p>workie?</p></body></html>', /* required */
+            Charset: 'UTF-8'
+          }
+        },
+        Subject: { /* required */
+          Data: 'DezNutz', /* required */
+          Charset: 'UTF-8'
+        }
+      },
+      Source: 'danjenator@gmail.com', /* required */
+      Tags: [
+        {
+          Name: 'Id', /* required */
+          Value: '555-555' /* required */
+        },
+        /* more items */
+      ]
+    };
+    ses.sendEmail(params, function(err, data) {
+      if (err) console.log(err, err.stack); // an error occurred
+      else     console.log(data);           // successful response
+    });
+
   }
 
   static deleteTodo(req, res) {
-    let _id = req.params.id;
 
-    TodoDAO
-      .deleteTodo(_id)
-      .then(() => res.status(200).end())
-      .catch(error => res.status(400).json(error));
   }
 }
