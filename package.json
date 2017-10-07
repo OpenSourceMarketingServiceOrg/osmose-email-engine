@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack",
+    "build": "npm run clean:d && webpack",
     "start": "node index.js",
     "clean": "npm run clean:d && npm clean:i",
     "clean:d": "rm -rf dist",
