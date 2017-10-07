@@ -4,9 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack",
+    "build": "npm run clean:d && webpack",
     "start": "node index.js",
-    "clean": "rm -rf node_modules"
+    "clean": "npm run clean:d && npm clean:i",
+    "clean:d": "rm -rf dist",
+    "clean:i": "rm -rf node_modules"
   },
   "repository": {
     "type": "git",
@@ -28,6 +30,10 @@
   "devDependencies": {
     "babel-core": "6.26.0",
     "babel-loader": "7.1.2",
+    "babel-preset-env": "1.6.0",
     "webpack": "3.6.0"
+  },
+  "dependencies": {
+    "aws-sdk": "2.130.0"
   }
 }
