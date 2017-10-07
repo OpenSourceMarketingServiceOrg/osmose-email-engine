@@ -1,5 +1,5 @@
-const Engine = require('./dist/bundle');
+const OsmoseEE = require('./dist/bundle');
 
-console.log("engine: ", Engine);
+console.log("engine: ", OsmoseEE);
 
-Engine.testesFunction("DezzNutz");
+OsmoseEE.testesFunction("DezzNutz");
