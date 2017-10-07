@@ -12,9 +12,8 @@ exports.osmoseSendEmail = (addresses, email, from)=>{
 
     console.log('params: ', params.create(addresses, email, from));
 
-    // ses.sendEmail(params.create(addresses, email, from), function(err, data) {
-    //   if (err) console.log(err, err.stack); // an error occurred
-    //   else     console.log(data);           // successful response
-    // });
-  //}
+    ses.sendEmail(params.create(addresses, email, from), function(err, data) {
+      if (err) console.log(err, err.stack); // an error occurred
+      else     console.log(data);           // successful response
+    });
 }
