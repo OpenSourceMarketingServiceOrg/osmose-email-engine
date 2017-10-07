@@ -22,7 +22,7 @@
     "webpack",
     "babel"
   ],
-  "author": "Daniel Brown",
+  "author": "Daniel Brown <danjenator@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/OpenSourceMarketingServiceOrg/osmose-email-engine/issues"
