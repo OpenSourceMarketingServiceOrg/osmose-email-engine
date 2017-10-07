@@ -5,6 +5,7 @@ const ses = new AWS.SES({
   apiVersion: '2010-12-01',
   region: 'us-east-1'
 });
+const Engine = require('./osmose');
 
 module.exports = class TodoController {
   static getAll(req, res) {
@@ -17,9 +18,13 @@ module.exports = class TodoController {
 
   static createTodo(req, res) {
 
+    console.log("engine: ", Engine);
+
+    Engine.testesFunction("DezzNutz");
+
     console.log("createTodo: ", req.body);
 
-    var params = {
+    let params = {
       Destination: {
         ToAddresses: [
           'danjenator@gmail.com',
@@ -38,14 +43,7 @@ module.exports = class TodoController {
           Charset: 'UTF-8'
         }
       },
-      Source: 'danjenator@gmail.com', /* required */
-      Tags: [
-        {
-          Name: 'Id', /* required */
-          Value: '555-555' /* required */
-        },
-        /* more items */
-      ]
+      Source: 'danjenator@gmail.com'
     };
     ses.sendEmail(params, function(err, data) {
       if (err) console.log(err, err.stack); // an error occurred
