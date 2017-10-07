@@ -5,7 +5,7 @@ module.exports = {
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
-    library: 'Osmose',
+    library: 'library',
     libraryTarget: "umd"
   },
   module: {
@@ -17,14 +17,5 @@ module.exports = {
     ]
   },
   context: __dirname,
-  target: "node",
-  node: {
-    console: true,
-    global: true,
-    process: true,
-    __filename: "mock",
-    __dirname: "mock",
-    Buffer: true,
-    setImmediate: true
-  }
+  target: "node"
 }
