@@ -1,20 +1,33 @@
 {
   "name": "osmose-email-engine",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack",
+    "start": "node index.js",
+    "clean": "rm -rf node_modules"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/OpenSourceMarketingServiceOrg/osmose-email-engine.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "osmose",
+    "email",
+    "ses",
+    "webpack",
+    "babel"
+  ],
+  "author": "Daniel Brown",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/OpenSourceMarketingServiceOrg/osmose-email-engine/issues"
   },
-  "homepage": "https://github.com/OpenSourceMarketingServiceOrg/osmose-email-engine#readme"
+  "homepage": "https://github.com/OpenSourceMarketingServiceOrg/osmose-email-engine#readme",
+  "devDependencies": {
+    "babel-core": "6.26.0",
+    "babel-loader": "7.1.2",
+    "webpack": "3.6.0"
+  }
 }
