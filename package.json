@@ -2,7 +2,7 @@
   "name": "osmose-email-engine",
   "version": "0.1.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/osmose-email-engine.js",
   "scripts": {
     "build": "npm run clean:d && webpack",
     "start": "node index.js",
@@ -19,8 +19,8 @@
     "osmose",
     "email",
     "ses",
-    "webpack",
-    "babel"
+    "marketing",
+    "aws"
   ],
   "author": "Daniel Brown <danjenator@gmail.com>",
   "license": "MIT",
