@@ -9,7 +9,7 @@
     "clean": "npm run clean:d && npm clean:i",
     "clean:d": "rm -rf dist",
     "clean:i": "rm -rf node_modules",
-    "postversion": "git push && pit push --tags"
+    "postversion": "git push && git push --tags"
   },
   "repository": {
     "type": "git",
