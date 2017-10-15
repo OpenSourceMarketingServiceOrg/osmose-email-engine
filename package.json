@@ -1,14 +1,15 @@
 {
   "name": "osmose-email-engine",
-  "version": "0.0.0",
+  "version": "0.1.1",
   "description": "",
-  "main": "index.js",
+  "main": "dist/osmose-email-engine.js",
   "scripts": {
     "build": "npm run clean:d && webpack",
     "start": "node index.js",
     "clean": "npm run clean:d && npm clean:i",
     "clean:d": "rm -rf dist",
-    "clean:i": "rm -rf node_modules"
+    "clean:i": "rm -rf node_modules",
+    "postversion": "git push && git push --tags"
   },
   "repository": {
     "type": "git",
@@ -18,10 +19,10 @@
     "osmose",
     "email",
     "ses",
-    "webpack",
-    "babel"
+    "marketing",
+    "aws"
   ],
-  "author": "Daniel Brown",
+  "author": "Daniel Brown <danjenator@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/OpenSourceMarketingServiceOrg/osmose-email-engine/issues"
