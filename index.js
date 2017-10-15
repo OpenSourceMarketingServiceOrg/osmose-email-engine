@@ -1,4 +1,4 @@
-const osmose = require('./dist/bundle');
+const osmose = require('./dist/osmose-email-engine');
 
 // let addresses = {
 //   BccAddresses: [],
