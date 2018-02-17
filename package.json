@@ -1,40 +1,40 @@
 {
-  "name": "osmose-email-engine",
-  "version": "0.1.1",
-  "description": "",
-  "main": "dist/osmose-email-engine.js",
-  "scripts": {
-    "build": "npm run clean:d && webpack",
-    "start": "node index.js",
-    "clean": "npm run clean:d && npm clean:i",
-    "clean:d": "rm -rf dist",
-    "clean:i": "rm -rf node_modules",
-    "postversion": "git push && git push --tags"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/OpenSourceMarketingServiceOrg/osmose-email-engine.git"
-  },
-  "keywords": [
-    "osmose",
-    "email",
-    "ses",
-    "marketing",
-    "aws"
-  ],
-  "author": "Daniel Brown <danjenator@gmail.com>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/OpenSourceMarketingServiceOrg/osmose-email-engine/issues"
-  },
-  "homepage": "https://github.com/OpenSourceMarketingServiceOrg/osmose-email-engine#readme",
-  "devDependencies": {
-    "babel-core": "6.26.0",
-    "babel-loader": "7.1.2",
-    "babel-preset-env": "1.6.0",
-    "webpack": "3.6.0"
-  },
-  "dependencies": {
-    "aws-sdk": "2.130.0"
-  }
+    "name": "osmose-email-engine",
+    "version": "1.0.0",
+    "description": "",
+    "main": "dist/osmose-email-engine.js",
+    "scripts": {
+        "build": "npm run clean:d && webpack",
+        "start": "node index.js",
+        "clean": "npm run clean:d && npm clean:i",
+        "clean:d": "rm -rf dist",
+        "clean:i": "rm -rf node_modules",
+        "postversion": "git push && git push --tags"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/OpenSourceMarketingServiceOrg/osmose-email-engine.git"
+    },
+    "keywords": [
+        "osmose",
+        "email",
+        "ses",
+        "marketing",
+        "aws"
+    ],
+    "author": "Daniel Brown <danjenator@gmail.com>",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/OpenSourceMarketingServiceOrg/osmose-email-engine/issues"
+    },
+    "homepage": "https://github.com/OpenSourceMarketingServiceOrg/osmose-email-engine#readme",
+    "devDependencies": {
+        "babel-core": "6.26.0",
+        "babel-loader": "7.1.2",
+        "babel-preset-env": "1.6.0",
+        "webpack": "3.6.0"
+    },
+    "dependencies": {
+        "aws-sdk": "2.122.0"
+    }
 }
