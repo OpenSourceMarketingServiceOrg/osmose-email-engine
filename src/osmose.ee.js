@@ -1,19 +1,31 @@
 import AWS from 'aws-sdk';
 import params from './ee.params';
 
-exports.osmoseSendEmail = (addresses, email, from)=>{
-
-  // static sendEmail(input, addresses, email, from) {
+exports.osmoseSendEmail = (emailData) => {
 
     const ses = new AWS.SES({
-       apiVersion: '2010-12-01',
-       region: 'us-east-1'
+        apiVersion: '2010-12-01',
+        region: 'us-east-1'
     });
 
-    console.log('params: ', params.create(addresses, email, from));
+    emailData.to.ToAddresses.forEach((toAddy) => {
 
-    ses.sendEmail(params.create(addresses, email, from), function(err, data) {
-      if (err) console.log(err, err.stack); // an error occurred
-      else     console.log(data);           // successful response
+        let destination = {
+            BccAddresses: emailData.to.BccAddresses,
+            CcAddresses: emailData.to.CcAddresses,
+            ToAddresses: [
+                toAddy
+            ]
+        }
+        let email = {
+            subject: emailData.subject,
+            body: emailData.content
+        };
+        let from = emailData.from;
+
+        ses.sendEmail(params.create(destination, email, from), function(err, data) {
+            if (err) console.log('err: ' + err, err.stack); // an error occurred
+            else console.log('success data: ', data); // successful response
+        });
     });
 }
