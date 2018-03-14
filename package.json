@@ -30,11 +30,11 @@
     "homepage": "https://github.com/OpenSourceMarketingServiceOrg/osmose-email-engine#readme",
     "devDependencies": {
         "babel-core": "6.26.0",
-        "babel-loader": "7.1.2",
-        "babel-preset-env": "1.6.0",
-        "webpack": "3.6.0"
+        "babel-loader": "7.1.4",
+        "babel-preset-env": "1.6.1",
+        "webpack": "3.11.0"
     },
     "dependencies": {
-        "aws-sdk": "2.122.0"
+        "aws-sdk": "2.209.0"
     }
 }
