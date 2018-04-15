@@ -2,6 +2,7 @@
     "name": "osmose-email-engine",
     "version": "1.0.0",
     "description": "",
+    "license": "MIT",
     "main": "dist/osmose-email-engine.js",
     "scripts": {
         "build": "npm run clean:d && webpack",
@@ -11,30 +12,32 @@
         "clean:i": "rm -rf node_modules",
         "postversion": "git push && git push --tags"
     },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/OpenSourceMarketingServiceOrg/osmose-email-engine.git"
+    "dependencies": {
+        "aws-sdk": "2.209.0"
     },
-    "keywords": [
-        "osmose",
-        "email",
-        "ses",
-        "marketing",
-        "aws"
-    ],
-    "author": "Daniel Brown <danjenator@gmail.com>",
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/OpenSourceMarketingServiceOrg/osmose-email-engine/issues"
-    },
-    "homepage": "https://github.com/OpenSourceMarketingServiceOrg/osmose-email-engine#readme",
     "devDependencies": {
         "babel-core": "6.26.0",
         "babel-loader": "7.1.4",
         "babel-preset-env": "1.6.1",
         "webpack": "3.11.0"
     },
-    "dependencies": {
-        "aws-sdk": "2.209.0"
-    }
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/OpenSourceMarketingServiceOrg/osmose-email-engine"
+    },
+    "bugs": {
+        "url": "https://github.com/OpenSourceMarketingServiceOrg/osmose-email-engine/issues"
+    },
+    "homepage": "http://osmose.tools",
+    "author": "OpenSourceMarketingService <OpenSourceMarketingService@gmail.com>",
+    "contributors": [
+        "Dan Brown <danjenator@gmail.com> (https://github.com/Danjenator)"
+    ],
+    "keywords": [
+        "osmose",
+        "email",
+        "ses",
+        "marketing",
+        "aws"
+    ]
 }
